@@ -1,7 +1,7 @@
 var loadState = new function () {
     var self = this;
 
-    var pacManWebModulesLoadedCount = 0;
+    var pacMakakasWebModulesLoadedCount = 0;
     var scriptsFinished = false;
     var assetsFinished = false;
 
@@ -18,11 +18,11 @@ var loadState = new function () {
     this.scriptLoaded = function (moduleName) {
         var p = document.getElementById("progress-bar-scripts-percentage");
 
-        pacManWebModulesLoadedCount = pacManWebModulesLoadedCount + 1;
+        pacMakakasWebModulesLoadedCount = pacMakakasWebModulesLoadedCount + 1;
 
-        var percentage = (pacManWebModulesLoadedCount / 93) * 100;
+        var percentage = (pacMakakasWebModulesLoadedCount / 93) * 100;
 
-        console.info(pacManWebModulesLoadedCount);
+        console.info(pacMakakasWebModulesLoadedCount);
 
         p.style.width = percentage + "%";
 

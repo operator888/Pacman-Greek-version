@@ -58,7 +58,14 @@ export class Canvas {
 
     drawOtherCanvas2(otherCanvas: Canvas, position: Point) {
         position = position.add(this._topLeft);
-        this._canvasRenderContext.drawImage(otherCanvas._canvasRenderContext.canvas, position.x, position.y);
+        
+        // Check if the canvas has valid dimensions before drawing
+        const canvas = otherCanvas._canvasRenderContext.canvas;
+        if (canvas.width === 0 || canvas.height === 0) {
+            return; // Skip drawing if canvas has zero dimensions
+        }
+        
+        this._canvasRenderContext.drawImage(canvas, position.x, position.y);
     }
 
     get width(): number {

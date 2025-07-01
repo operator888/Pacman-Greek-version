@@ -2,11 +2,11 @@ import { GhostNickname, Ghost, Inky, Pinky, Blinky, Clyde } from "../Ghosts/_exp
 
 import { Fruit } from "./Fruit";
 import { Maze } from "./Maze";
-import { PacMan } from "./PacMan";
+import { PacMakakas } from "./PacMan";
 
 export class Actors {
     private readonly _maze: Maze;
-    private readonly _pacMan: PacMan;
+    private readonly _pacMakakas: PacMakakas;
 
     private readonly _fruit: Fruit;
 
@@ -21,7 +21,7 @@ export class Actors {
         this._maze = new Maze();
         this._maze.loadContent();
 
-        this._pacMan = new PacMan();
+        this._pacMakakas = new PacMakakas();
         this._fruit = new Fruit();
 
         this._blinky = new Blinky(this._maze);
@@ -45,8 +45,8 @@ export class Actors {
         return this._ghosts;
     }
 
-    get pacMan(): PacMan {
-        return this._pacMan;
+    get pacMakakas(): PacMakakas {
+        return this._pacMakakas;
     }
 
     get fruit(): Fruit {

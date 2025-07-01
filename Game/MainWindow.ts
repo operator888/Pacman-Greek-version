@@ -1,7 +1,7 @@
 import { Engine } from "../Engine";
 import { Ghost } from "../Ghosts/_exports";
 import { Keyboard, EggTimer, SceneUpdateResult, Point, Canvas, GameContext, Vector2D } from "../Core/_exports";
-import { Act, PacManDyingAct, LevelFinishedAct, ActUpdateResult, AttractAct} from "../Scenes/_exports";
+import { Act, PacMakakasDyingAct, LevelFinishedAct, ActUpdateResult, AttractAct} from "../Scenes/_exports";
 
 import { TimedSprite } from "./TimedSprite";
 import { TimedSpriteList } from "./TimedSpriteList";
@@ -124,10 +124,10 @@ export class MainWindow {
         MainWindow.tempSprites.add(new TimedSprite(3000, new ScoreSprite(MainWindow.actors.fruit.position, points)));
     }
 
-    static pacManEaten() {
-        MainWindow.gameStats.pacManEaten();
+    static pacMakakasEaten() {
+        MainWindow.gameStats.pacMakakasEaten();
 
-        MainWindow.currentAct = new PacManDyingAct();
+        MainWindow.currentAct = new PacMakakasDyingAct();
     }
 
     static ghostEaten(ghost: Ghost) {
@@ -135,14 +135,14 @@ export class MainWindow {
 
         const points = MainWindow.gameStats.ghostEaten();
 
-        this.tempSprites.add(new TimedSprite(900, new ScoreSprite(MainWindow.actors.pacMan.position, points)));
+        this.tempSprites.add(new TimedSprite(900, new ScoreSprite(MainWindow.actors.pacMakakas.position, points)));
 
         ghost.visible = false;
-        MainWindow.actors.pacMan.visible = false;
+        MainWindow.actors.pacMakakas.visible = false;
 
         MainWindow.pauser = new EggTimer(1000, () => {
             ghost.visible = true;
-            MainWindow.actors.pacMan.visible = true;
+            MainWindow.actors.pacMakakas.visible = true;
         });
     }
 
@@ -153,7 +153,7 @@ export class MainWindow {
 
         MainWindow.gameStats.pillEaten(cell);
 
-        MainWindow.actors.pacMan.pillEaten();
+        MainWindow.actors.pacMakakas.pillEaten();
         this.checkForNoMorePills();
     }
 

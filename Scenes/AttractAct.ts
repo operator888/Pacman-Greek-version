@@ -7,7 +7,7 @@ import { StartButtonAct } from "./StartButtonAct";
 import { Engine } from "../Engine";
 import { ChaseSubAct } from "./ChaseSubAct";
 import { ActUpdateResult } from "./ActUpdateResult";
-import { AttractScenePacMan } from "./AttractScenePacMan";
+import { AttractScenePacMakakas } from "./AttractScenePacMan";
 import { Act } from "./Act";
 
 /**
@@ -19,7 +19,7 @@ export class AttractAct extends Act {
 
     private readonly _powerDotLegend: PowerPill;
     private readonly _chaseSubAct: ChaseSubAct;
-    private readonly _pacMan: AttractScenePacMan;
+    private readonly _pacMan: AttractScenePacMakakas;
     private readonly _blinky: SimpleGhost;
     private readonly _pinky: SimpleGhost;
     private readonly _inky: SimpleGhost;
@@ -38,16 +38,16 @@ export class AttractAct extends Act {
         this._pos = new Point(45, 65);
 
         this._gameContext = new GameContext();
-        this._pacMan = new AttractScenePacMan();
+        this._pacMan = new AttractScenePacMakakas();
 
         this._powerDotLegend = new PowerPill();
         this._powerDotLegend.position = new Point(150, 250);
         this._powerDotLegend.visible = false;
 
-        this._blinky = new SimpleGhost(GhostNickname.Blinky, Direction.Right);
-        this._pinky = new SimpleGhost(GhostNickname.Pinky, Direction.Right);
-        this._inky = new SimpleGhost(GhostNickname.Inky, Direction.Right);
-        this._clyde = new SimpleGhost(GhostNickname.Clyde, Direction.Right);
+        this._blinky = new SimpleGhost(GhostNickname.Eforiakos, Direction.Right);
+        this._pinky = new SimpleGhost(GhostNickname.DEH, Direction.Right);
+        this._inky = new SimpleGhost(GhostNickname.Tempelis, Direction.Right);
+        this._clyde = new SimpleGhost(GhostNickname.Mizas, Direction.Right);
 
         this._offScreenCanvas = Canvas.createOffscreenCanvas(new Vector2D(600, 400));
         this._offScreenCanvas.fillRect("black", Point.zero, this._offScreenCanvas.size);
@@ -68,28 +68,28 @@ export class AttractAct extends Act {
     }
 
     writeTextSlowly() {
-        this._offScreenCanvas.drawText("CHARACTER / NICKNAME", "white", new Point(32, 12));
+        this._offScreenCanvas.drawText("ΧΑΡΑΚΤΗΡΑΣ / ΨΕΥΔΩΝΥΜΟ", "white", new Point(32, 12));
         const gap = new Point(0, 24);
 
         let pos = new Point(16, 30);
 
         const timeForEachOne = 2100;
 
-        this.drawGhostDescriptor(this._offScreenCanvas, this._blinky, "red", "SHADOW", "BLINKY", pos);
+        this.drawGhostDescriptor(this._offScreenCanvas, this._blinky, "red", "ΣΚΙΩΔΗΣ", "ΕΦΟΡΙΑΚΟΣ", pos);
 
         setTimeout(() => {
            pos = pos.add(gap);
-           this.drawGhostDescriptor(this._offScreenCanvas, this._pinky, "pink", "SPEEDY", "PINKY", pos);
+           this.drawGhostDescriptor(this._offScreenCanvas, this._pinky, "pink", "ΓΡΗΓΟΡΟΣ", "ΔΕΗ", pos);
         }, timeForEachOne);
 
         setTimeout(() => {
            pos = pos.add(gap);
-           this.drawGhostDescriptor(this._offScreenCanvas, this._inky, "cyan", "BASHFUL", "INKY", pos);
+           this.drawGhostDescriptor(this._offScreenCanvas, this._inky, "cyan", "ΝΤΡΟΠΑΛΟΣ", "ΤΕΜΠΕΛΗΣ", pos);
         }, timeForEachOne * 2);
 
         setTimeout(() => {
            pos = pos.add(gap);
-           this.drawGhostDescriptor(this._offScreenCanvas, this._clyde, "yellow", "POKEY", "CLYDE", pos);
+           this.drawGhostDescriptor(this._offScreenCanvas, this._clyde, "yellow", "ΑΡΓΟΣ", "ΜΙΖΑΣ", pos);
         }, timeForEachOne * 3);
 
         setTimeout(() => {

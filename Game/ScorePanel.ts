@@ -28,7 +28,7 @@ export class ScorePanel {
     }
 
     drawHighScore() {
-        this._canvas.drawText("HIGH SCORE", "white", this._highScoreTextPos);
+        this._canvas.drawText("ΜΕΓΑΛΥΤΕΡΟ ΧΡΕΟΣ", "white", this._highScoreTextPos);
 
         this.drawRightAlignedScoreText(MainWindow.gameStats.highScore, this._highScorePos);
     }

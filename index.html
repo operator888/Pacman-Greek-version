@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>pac-man</title>
+    <title>Pac-Makakas: Η ΕΛΛΗΝΙΚΗ ΕΚΔΟΣΗ</title>
 
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
     <link rel="stylesheet" type="text/css" href="css/slider.css"/>
@@ -47,7 +47,7 @@
 <body id="body">
     <div id="loader" class="loader">
         <h1 style="text-align: center">
-            LOADING!
+            ΠΕΡΙΜΕΝΕΤΕ...
         </h1>
 
         <h2>Scripts...</h2>
@@ -153,9 +153,9 @@
     });
 
     require(["js/Engine", "js/GameStorage"],
-        function (pacManModule) {
+        function (pacMakakasModule) {
             loadState.scriptsFinishedLoading();
-            var engine = new pacManModule.Engine();
+            var engine = new pacMakakasModule.Engine();
         });
 
     controlPanel.initialise();

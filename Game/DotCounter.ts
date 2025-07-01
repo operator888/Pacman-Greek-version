@@ -83,12 +83,12 @@ export class GlobalDotCounter extends DotCounter {
 
 
     setTimedOut() {
-        if (this._lastOneForcedOut == undefined || this._lastOneForcedOut == GhostNickname.Clyde) {
-            this._nextOneToForceOut = GhostNickname.Pinky;
-        } else if (this._lastOneForcedOut == GhostNickname.Pinky) {
-            this._nextOneToForceOut = GhostNickname.Inky;
-        } else if (this._lastOneForcedOut == GhostNickname.Inky) {
-            this._nextOneToForceOut = GhostNickname.Clyde;
+        if (this._lastOneForcedOut == undefined || this._lastOneForcedOut == GhostNickname.Mizas) {
+            this._nextOneToForceOut = GhostNickname.DEH;
+        } else if (this._lastOneForcedOut == GhostNickname.DEH) {
+            this._nextOneToForceOut = GhostNickname.Tempelis;
+        } else if (this._lastOneForcedOut == GhostNickname.Tempelis) {
+            this._nextOneToForceOut = GhostNickname.Mizas;
         }
     }
 
@@ -105,13 +105,13 @@ export class GlobalDotCounter extends DotCounter {
 
         let canLeave = false;
         
-        if (nickName === GhostNickname.Pinky && this.counter === 7) {
+        if (nickName === GhostNickname.DEH && this.counter === 7) {
             canLeave = true;
         }
-        if (nickName === GhostNickname.Inky && this.counter === 17) {
+        if (nickName === GhostNickname.Tempelis && this.counter === 17) {
             canLeave = true;
         }
-        if (nickName === GhostNickname.Clyde && this.counter === 32) {
+        if (nickName === GhostNickname.Mizas && this.counter === 32) {
             canLeave = true;
             this._finished = this.counter === 32;
         }

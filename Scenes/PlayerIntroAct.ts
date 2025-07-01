@@ -23,7 +23,7 @@ export class PlayerIntroAct extends Act {
         super();
 
         MainWindow.actors.fruit.reset();
-        MainWindow.actors.pacMan.reset(this._isDemoMode);
+        MainWindow.actors.pacMakakas.reset(this._isDemoMode);
 
         MainWindow.actors.ghosts.forEach(g => g.reset());
 
@@ -58,13 +58,13 @@ export class PlayerIntroAct extends Act {
         MainWindow.actors.maze.draw(canvas);
 
         if (this._isDemoMode) {
-            canvas.drawText("GAME OVER", "red", TextPoints.gameOverPoint);
+            canvas.drawText("ΧΡΕΟΚΟΠΗΣΕΣ!", "red", TextPoints.gameOverPoint);
         } else {
             this.drawPlayerAndReadyText(canvas);
         }
 
         if (this._progress === 1) {
-            MainWindow.actors.pacMan.draw(canvas);
+            MainWindow.actors.pacMakakas.draw(canvas);
 
             MainWindow.actors.ghosts.forEach(g => g.draw(canvas));
         }
@@ -75,15 +75,15 @@ export class PlayerIntroAct extends Act {
 
         if (this._progress === 0) {
             if (MainWindow.gameStats.currentPlayerStats.playerIndex === 0) {
-                text = "PLAYER ONE";
+                text = "ΦΟΡΟΛΟΓΟΥΜΕΝΟΣ Α'";
             } else {
-                text = "PLAYER TWO";
+                text = "ΦΟΡΟΛΟΓΟΥΜΕΝΟΣ Β'";
             }
 
             canvas.drawText(text, "cyan", TextPoints.playerTextPoint);
         }
 
-        canvas.drawText("READY!", "yellow", TextPoints.readyPoint);
+        canvas.drawText("ΕΤΟΙΜΟΣ ΓΙΑ ΦΟΡΟΥΣ!", "yellow", TextPoints.readyPoint);
     }
 
     get nextAct(): Act {

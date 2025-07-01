@@ -16,7 +16,7 @@ export class DemoKeyPresses {
 
     next(): Direction {
         if (this._index >= DemoKeyPresses.presses.length) {
-            throw new Error("Used up all key presses!");
+            this._index = 0; // Reset to beginning instead of throwing error
         }
 
         const t = DemoKeyPresses.presses[this._index++];

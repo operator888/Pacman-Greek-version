@@ -3,12 +3,12 @@ import { Direction } from "../Game/_exports";
 
 import { Engine } from "../Engine";
 import { ActUpdateResult } from "./ActUpdateResult";
-import { AttractScenePacMan } from "./AttractScenePacMan";
+import { AttractScenePacMakakas } from "./AttractScenePacMan";
 import { Act } from "./Act";
 import {StartEndPos} from "./StartEndPos";
 
 export class TornGhostChaseAct extends Act {
-    private readonly _pacMan: AttractScenePacMan;
+    private readonly _pacMan: AttractScenePacMakakas;
     private readonly _worm: GeneralSprite;
     private readonly _nextAct: Act;
 
@@ -36,7 +36,7 @@ export class TornGhostChaseAct extends Act {
 
         this._pacTimer = new EggTimer(4800, () => { });
 
-        this._pacMan = new AttractScenePacMan();
+        this._pacMan = new AttractScenePacMakakas();
         this._pacMan.direction = Direction.Left;
 
         this._worm = new GeneralSprite(Point.zero,

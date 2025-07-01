@@ -19,7 +19,7 @@ export class Inky extends Ghost {
 
     constructor(public readonly maze: Maze, blinky: Blinky) {
 
-        super("Inky", GhostNickname.Inky, maze, Tile.fromCell(15.5, 11), Direction.Up);
+        super("ΤΕΜΠΕΛΗΣ", GhostNickname.Tempelis, maze, Tile.fromCell(15.5, 11), Direction.Up);
 
         this.houseOffset = -1;
 
@@ -45,9 +45,9 @@ export class Inky extends Ghost {
     // From there, imagine drawing a vector from Blinky’s position to this tile, and then doubling 
     // the length of the vector. The tile that this new, extended vector ends on will be Inky’s actual target
     private _getChaseTargetCell = (): Point => {
-        const pacDir = MainWindow.actors.pacMan.getDirection();
+        const pacDir = MainWindow.actors.pacMakakas.getDirection();
 
-        const pacCellPos = MainWindow.actors.pacMan.getTile().index;
+        const pacCellPos = MainWindow.actors.pacMakakas.getTile().index;
 
         const twoCellsInFront = this.maze.constrainCell(
             pacCellPos.add(DirectionToIndexLookup.indexVectorFor(pacDir).multiply(2).toPoint()));

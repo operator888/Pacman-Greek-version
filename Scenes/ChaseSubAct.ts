@@ -3,7 +3,7 @@ import { EggTimer, Canvas, GameContext, Point } from "../Core/_exports";
 import { GhostNickname } from "../Ghosts/_exports";
 
 import { ActUpdateResult } from "./ActUpdateResult";
-import { AttractScenePacMan } from "./AttractScenePacMan";
+import { AttractScenePacMakakas } from "./AttractScenePacMan";
 import { AttractGhost } from "./AttractGhost";
 import {StartEndPos} from "./StartEndPos";
 
@@ -38,7 +38,7 @@ export class ChaseSubAct {
 
     private readonly _ghosts: AttractGhost[];
 
-    private readonly _pacMan: AttractScenePacMan;
+    private readonly _pacMan: AttractScenePacMakakas;
 
     private readonly _powerPillToEat: PowerPill;
     private readonly _powerPillLegend: PowerPill;
@@ -97,13 +97,13 @@ export class ChaseSubAct {
         this._powerPillLegend = new PowerPill();
         this._powerPillLegend.position = new Point(70, 188);
 
-        this._pacMan = new AttractScenePacMan();
+        this._pacMan = new AttractScenePacMakakas();
         this._pacMan.direction = Direction.Left;
 
-        this._blinky = new AttractGhost(GhostNickname.Blinky, Direction.Left);
-        this._pinky = new AttractGhost(GhostNickname.Pinky, Direction.Left);
-        this._inky = new AttractGhost(GhostNickname.Inky, Direction.Left);
-        this._clyde = new AttractGhost(GhostNickname.Clyde, Direction.Left);
+        this._blinky = new AttractGhost(GhostNickname.Eforiakos, Direction.Left);
+        this._pinky = new AttractGhost(GhostNickname.DEH, Direction.Left);
+        this._inky = new AttractGhost(GhostNickname.Tempelis, Direction.Left);
+        this._clyde = new AttractGhost(GhostNickname.Mizas, Direction.Left);
 
         this._ghosts.push(this._blinky);
         this._ghosts.push(this._pinky);
@@ -183,7 +183,7 @@ export class ChaseSubAct {
 
             if (Point.areNear(this._pacMan.position, g.position, 2)) {
                 this.ghostEaten(g);
-                if (g.nickName === GhostNickname.Clyde) {
+                if (g.nickName === GhostNickname.Mizas) {
 
                     this._tempTimers.add(new EggTimer(1000, () => {
                         this._finished = true;

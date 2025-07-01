@@ -61,7 +61,7 @@ export class GhostLogic {
             return avail[0];
         } else {
             if (this._maze.isSpecialIntersection(cellPosition) && this._ghost.state === GhostState.Normal) {
-                const index: Direction = avail.indexOf(Direction.Up);
+                const index: number = avail.indexOf(Direction.Up);
 
                 // special intersection - remove Up from choices
                 if (index !== -1) {
@@ -70,12 +70,20 @@ export class GhostLogic {
             }
 
             if (avail.length === 0) {
-                throw new Error("No choices to pick from!");
+                // Fallback: if no valid directions available due to reverse direction rule,
+                // allow the ghost to reverse direction as a last resort
+                console.warn("Ghost stuck with no valid directions, allowing reverse direction as fallback");
+                const reverseDir = this.getReverseDirection(dir);
+                if (choices.isSet(reverseDir)) {
+                    return reverseDir;
+                }
+                // If even reverse direction is not available, return current direction
+                return dir;
             }
 
-            const dir = this.pickShortest(tile, targetCell, avail);
+            const selectedDir = this.pickShortest(tile, targetCell, avail);
 
-            return dir;
+            return selectedDir;
         }
     }
 
@@ -136,5 +144,20 @@ export class GhostLogic {
 
     private round(n: number): number {
         return Math.round(n * 10) / 10;
+    }
+
+    private getReverseDirection(direction: Direction): Direction {
+        switch (direction) {
+            case Direction.Up:
+                return Direction.Down;
+            case Direction.Down:
+                return Direction.Up;
+            case Direction.Left:
+                return Direction.Right;
+            case Direction.Right:
+                return Direction.Left;
+            default:
+                return Direction.None;
+        }
     }
 }

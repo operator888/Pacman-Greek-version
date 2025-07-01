@@ -11,7 +11,7 @@ import {GhostMovementMode} from "./GhostMovementMode";
 export class Pinky extends Ghost {
     constructor(public readonly maze: Maze) {
 
-        super("Pinky", GhostNickname.Pinky, maze, Tile.fromCell(15.5, 11), Direction.Down);
+        super("ΔΕΗ", GhostNickname.DEH, maze, Tile.fromCell(15.5, 11), Direction.Down);
 
         this.getScatterTarget = ()=> new Point(2, 0);
         this.getChaseTarget = this._getChaseTargetCell;
@@ -29,17 +29,17 @@ export class Pinky extends Ghost {
   }
 
     // Pac-Man’s current position and orientation, and selecting the location four tiles straight 
-    // ahead of him. Works when PacMan is facing left, down, or right, but when facing upwards, 
+    // ahead of him. Works when Pac-Makakas is facing left, down, or right, but when facing upwards, 
     // it's also four tiles to the left 
     private _getChaseTargetCell = () => {
-        var pacDir = MainWindow.actors.pacMan.getDirection();
+        var pacDir = MainWindow.actors.pacMakakas.getDirection();
 
-        var pacTile = MainWindow.actors.pacMan.getTile().index;
+        var pacTile = MainWindow.actors.pacMakakas.getTile().index;
 
         var offset = this.maze.constrainCell(
             pacTile.add(DirectionToIndexLookup.indexVectorFor(pacDir).multiply(4).toPoint()));
 
-        // for the bug in the original pacman
+        // for the bug in the original Pac-Makakas
         if (pacDir === Direction.Up) {
             offset = offset.add(new Point(-4, 0));
         }

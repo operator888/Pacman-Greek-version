@@ -1,4 +1,4 @@
-﻿import { FramePair, Point } from "../Core/_exports";
+import { FramePair, Point } from "../Core/_exports";
 import { EyesSpritesheetInfo } from "./EyesSpritesheetInfo";
 import { FrightenedSpritesheet } from "./FrightenedSpritesheet";
 import { GhostSpritesheetInfo } from "./GhostSpritesheetInfo";
@@ -21,10 +21,10 @@ export class GhostSpritesheet {
         this.eyes = new EyesSpritesheetInfo(new Point(x, 64 + 16));
 
         this.entries = new Array<GhostSpritesheetInfo>();
-        this.entries[GhostNickname.Blinky] = new GhostSpritesheetInfo("Blinky", new Point(left, 64));
-        this.entries[GhostNickname.Pinky] = new GhostSpritesheetInfo("Pinky", new Point(left, 64 + 16));
-        this.entries[GhostNickname.Inky] = new GhostSpritesheetInfo("Inky", new Point(left, 64 + 32));
-        this.entries[GhostNickname.Clyde] = new GhostSpritesheetInfo("Clyde", new Point(left, 64 + 48));
+        this.entries[GhostNickname.Eforiakos] = new GhostSpritesheetInfo("Eforiakos", new Point(left, 64));
+        this.entries[GhostNickname.DEH] = new GhostSpritesheetInfo("DEH", new Point(left, 64 + 16));
+        this.entries[GhostNickname.Tempelis] = new GhostSpritesheetInfo("Tempelis", new Point(left, 64 + 32));
+        this.entries[GhostNickname.Mizas] = new GhostSpritesheetInfo("Mizas", new Point(left, 64 + 48));
     }
 
     getEntry(nickname: GhostNickname): GhostSpritesheetInfo {

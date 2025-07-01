@@ -1,6 +1,6 @@
 import { LoopingTimer, Canvas, Point, GameContext } from "../Core/_exports";
 
-import { PacMan } from "./PacMan";
+import { PacMakakas } from "./PacMan";
 import { Engine } from "../Engine";
 import { SimpleFruit } from "./Fruit";
 import {MainWindow} from "./MainWindow";
@@ -43,7 +43,7 @@ export class StatusPanel {
                 xpos,
                 Point.zero,
                 Point.sixteen,
-                PacMan.facingLeftSpritesheetPos,
+                PacMakakas.facingLeftSpritesheetPos,
                 this._spriteSheet);
         }
     }

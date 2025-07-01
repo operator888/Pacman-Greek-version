@@ -36,7 +36,7 @@ export class GameOverAct extends Act {
     draw(canvas: Canvas) {
         MainWindow.actors.maze.draw(canvas);
 
-        canvas.drawText("GAME OVER", "red", TextPoints.gameOverPoint);
+        canvas.drawText("ΧΡΕΟΚΟΠΗΣΕΣ!", "red", TextPoints.gameOverPoint);
     }
 
     get nextAct(): Act {

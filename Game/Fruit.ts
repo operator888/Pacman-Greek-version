@@ -92,7 +92,7 @@ export class Fruit extends SimpleFruit {
     update(context: GameContext): void {
         if (this.visible) {
             this._showTimer.run(context.elapsed);
-            if (Point.areNear(MainWindow.actors.pacMan.position, this.position, 4)) {
+            if (Point.areNear(MainWindow.actors.pacMakakas.position, this.position, 4)) {
                 MainWindow.fruitEaten();
 
                 this.visible = false;

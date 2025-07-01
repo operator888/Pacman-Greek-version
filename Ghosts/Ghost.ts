@@ -316,15 +316,15 @@ export class Ghost extends SimpleGhost implements IActor {
     }
 
     collisionDetection(): void {
-        if (this._tile.index.equals(MainWindow.actors.pacMan.getTile().index)) {
+        if (this._tile.index.equals(MainWindow.actors.pacMakakas.getTile().index)) {
             if (this._state === GhostState.Normal) {
                 //cheat:
                 if (GameContext.keyboard.isKeyDown(Keyboard.five)) {
-                    MainWindow.pacManEaten();
+                    MainWindow.pacMakakasEaten();
 
                 }
                 //cheat
-                MainWindow.pacManEaten();
+                MainWindow.pacMakakasEaten();
             }
 
             if (this._state === GhostState.Frightened) {

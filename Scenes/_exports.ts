@@ -1,8 +1,8 @@
-export { AttractScenePacMan } from "./AttractScenePacMan";
+export { AttractScenePacMakakas } from "./AttractScenePacMan";
 export { AttractGhost } from "./AttractGhost";
 export { AttractAct } from "./AttractAct";
 export { Act } from "./Act";
-export { PacManDyingAct } from "./PacManDyingAct";
+export { PacMakakasDyingAct } from "./PacManDyingAct";
 export { LevelFinishedAct } from "./LevelFinishedAct";
 export { ChaseSubAct } from "./ChaseSubAct";
 export { TornGhostChaseAct } from "./TornGhostChaseAct";

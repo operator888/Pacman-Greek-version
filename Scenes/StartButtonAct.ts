@@ -62,7 +62,7 @@ export class StartButtonAct extends Act {
         }
         canvas.drawText(text, "cyan", new Point(70, 145));
 
-        canvas.drawText("BONUS PAC-MAN FOR 10000 PTS", "white", new Point(0, 175));
+        canvas.drawText("BONUS PAC-MAKAKAS FOR 10000 PTS", "white", new Point(0, 175));
         canvas.drawText("(C) 1980 MIDWAY MFG. CO.", "white", new Point(15, 190));
     }
 }

@@ -140,8 +140,8 @@ export class GameSoundPlayer {
         this.play(SoundName.CutScene);
     }
 
-    pacManDying(): any {
-        this.play(SoundName.PacManDying);
+    pacMakakasDying(): any {
+        this.play(SoundName.PacMakakasDying);
     }
 
     playerStart(): any {

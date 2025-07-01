@@ -1,7 +1,7 @@
 export enum SoundName {
     CoinInserted,
     CutScene,
-    PacManDying,
+    PacMakakasDying,
     ExtraLife,
     Frightened,
     FruitEaten,

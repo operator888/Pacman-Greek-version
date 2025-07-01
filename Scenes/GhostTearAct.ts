@@ -15,7 +15,7 @@ import {
 import { Engine } from "../Engine";
 
 import { ActUpdateResult } from "./ActUpdateResult";
-import { AttractScenePacMan } from "./AttractScenePacMan";
+import { AttractScenePacMakakas } from "./AttractScenePacMan";
 import { Act } from "./Act";
 import { AttractGhost } from "./AttractGhost";
 import {StartEndPos} from "./StartEndPos";
@@ -33,7 +33,7 @@ export class GhostTearAct extends Act {
     private _finished: boolean;
     private _animFrame: number;
 
-    private readonly _pacMan: AttractScenePacMan;
+    private readonly _pacMan: AttractScenePacMakakas;
     private readonly _nextAct: Act;
 
     private readonly _blinky: AttractGhost;
@@ -93,14 +93,14 @@ export class GhostTearAct extends Act {
 
         this._pacTimer = new EggTimer(4750, () => { });
 
-        this._pacMan = new AttractScenePacMan();
+        this._pacMan = new AttractScenePacMakakas();
         this._pacMan.direction = Direction.Left;
 
         this._snagSprite = new GeneralSprite(this._centerPoint, this._tearSize, this._tearOffset, this._tearFrames[0]);
 
         this._snagSprite.visible = true;
 
-        this._blinky = new AttractGhost(GhostNickname.Blinky, Direction.Left);
+        this._blinky = new AttractGhost(GhostNickname.Eforiakos, Direction.Left);
         this._lookingBlinky = new NullSprite();
 
         const justOffScreen = new Point(250, 140);

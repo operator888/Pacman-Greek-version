@@ -1,7 +1,7 @@
 import { FramePair, Canvas, Sprite, Point, Vector2D, GameContext, TwoFrameAnimation } from "../Core/_exports";
 import { Tile, Direction } from "../Game/_exports";
 
-export class AttractScenePacMan extends Sprite {
+export class AttractScenePacMakakas extends Sprite {
     visible: boolean = true;
 
     private readonly _spriteSheet: HTMLImageElement;

@@ -11,7 +11,7 @@ import { LifeStatus } from "./LifeStatus";
 import { KeyPressedEvent } from "./KeyPressedEvent";
 import { FramePointers } from "./FramePointers";
 
-export class PacMan extends Sprite implements IActor {
+export class PacMakakas extends Sprite implements IActor {
     static readonly facingLeftSpritesheetPos = new Point(455, 16);
 
     private readonly _spriteSheet: HTMLImageElement;
@@ -41,7 +41,7 @@ export class PacMan extends Sprite implements IActor {
     private _frame2InSpriteMap: Point;
     private _animDirection: TwoFrameAnimation;
 
-    private _speed = Constants.pacManBaseSpeed;
+    private _speed = Constants.pacMakakasBaseSpeed;
 
     private _isDemoMode: boolean;
 
@@ -89,7 +89,7 @@ export class PacMan extends Sprite implements IActor {
         this._demoKeyPresses.reset();
         this._isDemoMode = isDemoMode;
         this._direction = Direction.Left;
-        this._speed = Constants.pacManBaseSpeed;
+        this._speed = Constants.pacMakakasBaseSpeed;
         this._dyingFramePointer = 0;
         this.position = Tile.toCenterCanvas(new Vector2D(13.5, 23).toPoint());
         this._lifeStatus = LifeStatus.Alive;
@@ -209,7 +209,7 @@ export class PacMan extends Sprite implements IActor {
             } else {
                 //cheat
                 //this.speed = 1;
-                this._speed = Constants.pacManBaseSpeed;
+                this._speed = Constants.pacMakakasBaseSpeed;
             }
         }
 
@@ -218,10 +218,10 @@ export class PacMan extends Sprite implements IActor {
         const levelProps = MainWindow.gameStats.currentPlayerStats.levelStats.levelProps;
         const inPillCell = this._tile.index.equals(this._pillEatenAt);
 
-        let pcToUse = inPillCell ? levelProps.pacManDotsSpeedPc : levelProps.pacManSpeedPc;
+        let pcToUse = inPillCell ? levelProps.pacMakakasDotsSpeedPc : levelProps.pacMakakasSpeedPc;
 
         if (MainWindow.gameStats.currentPlayerStats.isInFrightSession) {
-            pcToUse = inPillCell ? levelProps.frightPacManDotSpeedPc : levelProps.frightPacManSpeedPc;
+            pcToUse = inPillCell ? levelProps.frightPacMakakasSpeedPc : levelProps.frightPacMakakasSpeedPc;
         }
         if (!inPillCell) {
             this._pillEatenAt = Point.zero;

@@ -2,7 +2,6 @@
   "compileOnSave": true,
   "compilerOptions": {
     "outDir": "js",
-    "watch": true,
     "alwaysStrict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,

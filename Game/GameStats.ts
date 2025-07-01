@@ -135,8 +135,8 @@ export class GameStats {
         this.updateHighScore();
     }
 
-    pacManEaten() {
-        this._playerStats[this._currentPlayerIndex].pacManEaten();
+    pacMakakasEaten() {
+        this._playerStats[this._currentPlayerIndex].pacMakakasEaten();
     }
 
     ghostEaten(): number {

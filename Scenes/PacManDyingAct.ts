@@ -11,10 +11,10 @@ import {PlayerGameOverAct} from "./PlayerGameOverAct";
 import {GameStorage} from "../GameStorage";
 
 /**
- * An act that shows Pacman dying.  Transitions to either: the 'attract act' (if in demo mode), the 'game over act' if all players are dead,
+ * An act that shows Pac-Makakas dying.  Transitions to either: the 'attract act' (if in demo mode), the 'game over act' if all players are dead,
  * or the 'attract act' for the next player that's alive.
  */
-export class PacManDyingAct extends Act {
+export class PacMakakasDyingAct extends Act {
 
     private _step: number;
     private _timer: LoopingTimer;
@@ -27,14 +27,14 @@ export class PacManDyingAct extends Act {
 
         this._step = 0;
 
-        MainWindow.actors.pacMan.startDigesting();
+        MainWindow.actors.pacMakakas.startDigesting();
         MainWindow.actors.ghosts.forEach(g => g.stopMoving());
 
         this._timer = new LoopingTimer(2000, () => {
             this._step += 1;
-            Engine.gameSounds.pacManDying();
+            Engine.gameSounds.pacMakakasDying();
             
-            MainWindow.actors.pacMan.startDying();
+            MainWindow.actors.pacMakakas.startDying();
             
             this._timer = new LoopingTimer(2000, () => {
                 this._step += 1;
@@ -45,7 +45,7 @@ export class PacManDyingAct extends Act {
 
     update(context: GameContext): ActUpdateResult {
         this._timer.run(context.elapsed);
-        MainWindow.actors.pacMan.update(context);
+        MainWindow.actors.pacMakakas.update(context);
 
         MainWindow.actors.ghosts.forEach(g => g.update(context));
 
@@ -78,7 +78,7 @@ export class PacManDyingAct extends Act {
 
     draw(canvas: Canvas) {
         MainWindow.actors.maze.draw(canvas);
-        MainWindow.actors.pacMan.draw(canvas);
+        MainWindow.actors.pacMakakas.draw(canvas);
 
         if (this._step === 0) {
             MainWindow.actors.ghosts.forEach(g => g.draw(canvas));

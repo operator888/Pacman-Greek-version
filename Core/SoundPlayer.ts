@@ -1,12 +1,12 @@
 /// <reference types="howler"/>
 
-declare var Howl: any;
+declare const Howl: any;
 
 export class SoundPlayer {
 
     private _loaded: boolean;
 
-    private readonly _howl: Howl;
+    private readonly _howl: any;
 
     constructor(path: string, whenLoaded: () => void) {
 

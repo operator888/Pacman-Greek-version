@@ -28,7 +28,7 @@ export class LevelFinishedAct extends Act {
 
         Engine.gameSounds.reset();
 
-        MainWindow.actors.pacMan.startDigesting();
+        MainWindow.actors.pacMakakas.startDigesting();
         MainWindow.actors.ghosts.forEach(g => g.stopMoving());
 
         this._timer = new LoopingTimer(2000, () => {
@@ -50,7 +50,7 @@ export class LevelFinishedAct extends Act {
     update(context: GameContext): ActUpdateResult {
         this._timer.run(context.elapsed);
         MainWindow.actors.maze.update(context);
-        MainWindow.actors.pacMan.update(context);
+        MainWindow.actors.pacMakakas.update(context);
 
         return this._finished ? ActUpdateResult.Finished : ActUpdateResult.Running;
     }
@@ -80,7 +80,7 @@ export class LevelFinishedAct extends Act {
 
     draw(canvas: Canvas) {
         MainWindow.actors.maze.draw(canvas);
-        MainWindow.actors.pacMan.draw(canvas);
+        MainWindow.actors.pacMakakas.draw(canvas);
 
         if (this._step === 0) {
             MainWindow.actors.ghosts.forEach(g => g.draw(canvas));

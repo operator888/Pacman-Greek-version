@@ -15,7 +15,7 @@ export class SoundLoader {
 
         this._sounds[SoundName.CoinInserted] = this.loadAudio("snd/coin.mp3");
         this._sounds[SoundName.CutScene] = this.loadAudio("snd/cutscene.mp3");
-        this._sounds[SoundName.PacManDying] = this.loadAudio("snd/dying.mp3");
+        this._sounds[SoundName.PacMakakasDying] = this.loadAudio("snd/dying.mp3");
         this._sounds[SoundName.ExtraLife] = this.loadAudio("snd/extra_life.mp3");
         this._sounds[SoundName.Frightened] = this.loadAudio("snd/frightened.mp3");
         this._sounds[SoundName.FruitEaten] = this.loadAudio("snd/fruit_eaten.mp3");

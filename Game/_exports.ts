@@ -4,7 +4,7 @@ export { Direction } from "./Direction";
 export { DirectionChoices } from "./DirectionChoices";
 export { DirectionToIndexLookup } from "./DirectionToIndexLookup";
 export { Maze, MazeBounds } from "./Maze";
-export { PacMan } from "./PacMan";
+export { PacMakakas } from "./PacMan";
 export { IActor } from "./IActor";
 export { Tile } from "./Tile";
 export { TileContent } from "./TileContent";

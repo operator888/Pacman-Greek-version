@@ -116,7 +116,7 @@ export class PlayerStats {
         this._levelStats.pillEaten(point);
     }
 
-    pacManEaten() {
+    pacMakakasEaten() {
         this._ghostHouseDoor.switchToUseGlobalCounter();
 
         const props = this.levelStats.getGhostPatternProperties();

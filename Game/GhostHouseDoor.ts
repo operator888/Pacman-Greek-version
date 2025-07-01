@@ -29,27 +29,27 @@ export class GhostHouseDoor {
         const pinkyCounter = new DotCounter(0);
 
         if (level === 0) {
-            this._ghostCounters[GhostNickname.Pinky] = pinkyCounter;
-            this._ghostCounters[GhostNickname.Inky] = new DotCounter(30);
-            this._ghostCounters[GhostNickname.Clyde] = new DotCounter(60);
+            this._ghostCounters[GhostNickname.DEH] = pinkyCounter;
+            this._ghostCounters[GhostNickname.Tempelis] = new DotCounter(30);
+            this._ghostCounters[GhostNickname.Mizas] = new DotCounter(60);
         }
 
         if (level === 1) {
-            this._ghostCounters[GhostNickname.Pinky] = pinkyCounter;
-            this._ghostCounters[GhostNickname.Inky] = new DotCounter(0);
-            this._ghostCounters[GhostNickname.Clyde] = new DotCounter(50);
+            this._ghostCounters[GhostNickname.DEH] = pinkyCounter;
+            this._ghostCounters[GhostNickname.Tempelis] = new DotCounter(0);
+            this._ghostCounters[GhostNickname.Mizas] = new DotCounter(50);
         }
 
         if (level >= 2) {
-            this._ghostCounters[GhostNickname.Pinky] = pinkyCounter;
-            this._ghostCounters[GhostNickname.Inky] = new DotCounter(0);
-            this._ghostCounters[GhostNickname.Clyde] = new DotCounter(0);
+            this._ghostCounters[GhostNickname.DEH] = pinkyCounter;
+            this._ghostCounters[GhostNickname.Tempelis] = new DotCounter(0);
+            this._ghostCounters[GhostNickname.Mizas] = new DotCounter(0);
         }
 
         this._ghostCounterEnum = [
-            this._ghostCounters[GhostNickname.Pinky],
-            this._ghostCounters[GhostNickname.Inky],
-            this._ghostCounters[GhostNickname.Clyde]
+            this._ghostCounters[GhostNickname.DEH],
+            this._ghostCounters[GhostNickname.Tempelis],
+            this._ghostCounters[GhostNickname.Mizas]
         ];
 
         this._pillConsumptionTimeIdle = 0;
@@ -94,11 +94,11 @@ export class GhostHouseDoor {
             return;
         }
 
-        if (this._activeCounter === this._ghostCounters[GhostNickname.Pinky]) {
-            this.switchActive(this._ghostCounters[GhostNickname.Inky]);
-        } else if (this._activeCounter === this._ghostCounters[GhostNickname.Inky]) {
-            this.switchActive(this._ghostCounters[GhostNickname.Clyde]);
-        } else if (this._activeCounter === this._ghostCounters[GhostNickname.Clyde]) {
+        if (this._activeCounter === this._ghostCounters[GhostNickname.DEH]) {
+            this.switchActive(this._ghostCounters[GhostNickname.Tempelis]);
+        } else if (this._activeCounter === this._ghostCounters[GhostNickname.Tempelis]) {
+            this.switchActive(this._ghostCounters[GhostNickname.Mizas]);
+        } else if (this._activeCounter === this._ghostCounters[GhostNickname.Mizas]) {
             this.switchActive(this._nullCounter);
         } else {
             throw new Error("don't know where to switch the active dot counter to!");
@@ -106,7 +106,7 @@ export class GhostHouseDoor {
     }
 
     canGhostLeave(ghost: Ghost) {
-        if (ghost.nickName === GhostNickname.Blinky) {
+        if (ghost.nickName === GhostNickname.Eforiakos) {
             return true;
         }
 
@@ -137,7 +137,7 @@ export class GhostHouseDoor {
 
         if (this._activeCounter === this._globalCounter) {
             if (this._globalCounter.counter === 32
-                && MainWindow.actors.getGhost(GhostNickname.Clyde).isInHouse) {
+                && MainWindow.actors.getGhost(GhostNickname.Mizas).isInHouse) {
             }
         }
 

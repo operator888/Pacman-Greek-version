@@ -34,7 +34,7 @@ export class GameAct extends Act {
         }
 
         MainWindow.actors.maze.update(gameContext);
-        MainWindow.actors.pacMan.update(gameContext);
+        MainWindow.actors.pacMakakas.update(gameContext);
         MainWindow.actors.fruit.update(gameContext);
 
         MainWindow.actors.ghosts.forEach(g => g.update(gameContext));
@@ -47,7 +47,7 @@ export class GameAct extends Act {
         canvas.underlyingCanvas.fillRect(0, 0, canvas.underlyingCanvas.canvas.width, canvas.underlyingCanvas.canvas.height);
 
         MainWindow.actors.maze.draw(canvas);
-        MainWindow.actors.pacMan.draw(canvas);
+        MainWindow.actors.pacMakakas.draw(canvas);
         MainWindow.actors.fruit.draw(canvas);
 
         MainWindow.actors.ghosts.forEach(g => g.draw(canvas));

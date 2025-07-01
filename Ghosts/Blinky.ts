@@ -11,7 +11,7 @@ export class Blinky extends Ghost {
 
     constructor(public readonly maze: Maze) {
 
-        super("Blinky", GhostNickname.Blinky, maze, new Point(13.5, 11), Direction.Left);
+        super("ΕΦΟΡΙΑΚΟΣ", GhostNickname.Eforiakos, maze, new Point(13.5, 11), Direction.Left);
 
         this.getScatterTarget = ()=> this._scatterTarget;
         this.getChaseTarget = this._getChaseTargetCell;
@@ -31,10 +31,10 @@ export class Blinky extends Ghost {
     // to Pac-Man becomes less than eight tiles, Clyde’s target is set to the same tile as his fixed 
     // one in Scatter mode, just outside the bottom-left corner of the maze
     // Pac-Man’s current position and orientation, and selecting the location four tiles straight 
-    // ahead of him. Works when PacMan is facing left, down, or right, but when facing upwards, 
+    // ahead of him. Works when Pac-Makakas is facing left, down, or right, but when facing upwards, 
     // it's also four tiles to the left 
     private _getChaseTargetCell = () => {
-        var pacCellPos = MainWindow.actors.pacMan.getTile().index;
+        var pacCellPos = MainWindow.actors.pacMakakas.getTile().index;
 
         return pacCellPos;
     }
