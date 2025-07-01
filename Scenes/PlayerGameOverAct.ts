@@ -17,9 +17,9 @@ export class PlayerGameOverAct extends GameOverAct {
         let text = "";
 
         if (this._playerNumber === 0) {
-            text = "PLAYER ONE";
+            text = "ΦΟΡΟΛΟΓΟΥΜΕΝΟΣ Α'";
         } else {
-            text = "PLAYER TWO";
+            text = "ΦΟΡΟΛΟΓΟΥΜΕΝΟΣ Β'";
         }
 
         canvas.drawText(text, "cyan", TextPoints.playerTextPoint);

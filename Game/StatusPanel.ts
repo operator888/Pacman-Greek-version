@@ -49,7 +49,7 @@ export class StatusPanel {
     }
 
     drawCredits() {
-        this._canvas.drawText(`CREDIT ${Engine.credits}`, "white", this._creditTextPoint);
+        this._canvas.drawText(`ΠΙΣΤΩΣΗ ${Engine.credits}`, "white", this._creditTextPoint);
     }
 
     drawPlayerText(playerIndex: number, text: string, pos: Point) {

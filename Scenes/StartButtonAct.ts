@@ -51,18 +51,18 @@ export class StartButtonAct extends Act {
     }
 
     draw(canvas: Canvas): void {
-        canvas.drawText("PUSH START BUTTON", "orange", new Point(50, 115));
+        canvas.drawText("ΠΕΡΙΜΕΝΕΤΕ...", "orange", new Point(50, 115));
 
         let text: string;
         if (Engine.credits < 2) {
-            text = "1 PLAYER ONLY";
+            text = "1 ΦΟΡΟΛΟΓΟΥΜΕΝΟΣ ΜΟΝΟΣ";
 
         } else {
-            text = "1 OR 2 PLAYERS";
+            text = "1 Η 2 ΦΟΡΟΛΟΓΟΥΜΕΝΟΙ";
         }
         canvas.drawText(text, "cyan", new Point(70, 145));
 
-        canvas.drawText("BONUS PAC-MAKAKAS FOR 10000 PTS", "white", new Point(0, 175));
+        canvas.drawText("ΜΠΟΝΟΥΣ ΠΑΚ-ΜΑΚΑΚΑΣ ΓΙΑ 10000 ΠΟΝΤΟΥΣ", "white", new Point(0, 175));
         canvas.drawText("(C) 1980 MIDWAY MFG. CO.", "white", new Point(15, 190));
     }
 }
