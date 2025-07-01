@@ -4,6 +4,9 @@
   "description": "",
   "main": "main.js",
   "scripts": {
+    "build": "tsc",
+    "start": "node server.js",
+    "dev": "tsc --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -12,5 +15,8 @@
     "@types/howler": "^2.0.2",
     "connect": "^3.6.2",
     "serve-static": "^1.12.3"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
   }
 }
